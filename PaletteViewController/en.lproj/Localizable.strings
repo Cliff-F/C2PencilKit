@@ -1,0 +1,39 @@
+/* 
+  Localizable.strings
+  Palette View Controller
+
+  Created by Masatoshi Nishikata on 30/07/20.
+  Copyright © 2020 Catalystwo Limited. All rights reserved.
+*/
+
+
+"P_Pix Eraser" = "Pix Eraser";
+"P_Obj Eraser" = "Obj Eraser";
+"P_Lasso" = "Lasso";
+"P_Insert" = "Insert";
+"P_Untitled" = "Pen";
+"P_UntitledBrush" = "Marker";
+"P_UntitledPencil" = "Pencil";
+
+"P_Move" = "Move Cards";
+"P_Ruler" = "Ruler";
+
+"Pixel Eraser" = "Pixel Eraser";
+"Object Eraser" = "Object Eraser";
+"New Pen" = "New Pen";
+"New Pen Desc" = "To delete a pen, drag it outside the palette.";
+"Felt" = "Felt";
+"Solid" = "Solid";
+"Mask" = "Mask";
+
+"Thickness Scale" = "Thickness Scale";
+"Thickness by Pressure" = "Thickness by Pressure";
+"Alpha by Pressure" = "Opacity by Pressure";
+"Altitude Sensitivity" = "Altitude Sensitivity";
+"Azimuth with Pen" = "Azimuth";
+"Initial Pressure Cut off" = "Initial Pressure Cut-off";
+"Ink Speed" = "Ink Speed";
+"Shape" = "Shape";
+"Masking Pen\nTouch to unhide in browsing mode" = "Masking Pen\nTouch to unmask in browsing mode";
+
+"Back" = "Back";

@@ -1,0 +1,416 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment version="4384" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Palette View Controller-->
+        <scene sceneID="Udm-dJ-sI2">
+            <objects>
+                <viewController storyboardIdentifier="PaletteViewController" id="yB2-Kv-RjB" customClass="PaletteViewController" customModule="PaletteViewController" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cnO-Fu-jKt">
+                        <rect key="frame" x="0.0" y="0.0" width="280" height="80"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <subviews>
+                            <view opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RD9-w1-hpg" customClass="PaletteBackgroundView" customModule="PaletteViewController" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="280" height="80"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="37E-X9-4gG" userLabel="ClipView">
+                                <rect key="frame" x="92" y="-16" width="134" height="96"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NF6-Ng-Tqj" customClass="PaletteTabView" customModule="PaletteViewController" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="15" width="134" height="81"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S4D-ud-26V" userLabel="Utility Button">
+                                <rect key="frame" x="232" y="20" width="40" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="PaletteMore"/>
+                                <state key="disabled" image="RedoDisabled"/>
+                                <connections>
+                                    <action selector="utilityAction:" destination="yB2-Kv-RjB" eventType="touchUpInside" id="SP7-o3-DNX"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hrW-oG-YUz">
+                                <rect key="frame" x="8" y="20" width="40" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="Undo"/>
+                                <state key="disabled" image="UndoDisabled"/>
+                                <connections>
+                                    <action selector="undoAction:" destination="yB2-Kv-RjB" eventType="touchUpInside" id="Dtt-GI-NIj"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DFE-a2-gMK">
+                                <rect key="frame" x="46" y="20" width="40" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="Redo"/>
+                                <state key="disabled" image="RedoDisabled"/>
+                                <connections>
+                                    <action selector="redoAction:" destination="yB2-Kv-RjB" eventType="touchUpInside" id="BqY-I4-KKr"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="0X0-ru-Eah"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="280" height="80"/>
+                    <connections>
+                        <outlet property="backgroundView" destination="RD9-w1-hpg" id="kgm-mU-jiQ"/>
+                        <outlet property="clipView" destination="37E-X9-4gG" id="N9c-tF-qjh"/>
+                        <outlet property="paletteTabView" destination="NF6-Ng-Tqj" id="beE-w0-3Pt"/>
+                        <outlet property="redoButton" destination="DFE-a2-gMK" id="tZU-NM-PYi"/>
+                        <outlet property="undoButton" destination="hrW-oG-YUz" id="ECA-pf-bMz"/>
+                        <outlet property="utilityButton" destination="S4D-ud-26V" id="Q1Q-wP-C7Y"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wtV-JI-XI8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="202.89855072463769" y="-42.1875"/>
+        </scene>
+        <!--Palett Color Picker View Controller-->
+        <scene sceneID="DOE-rk-GCl">
+            <objects>
+                <viewController storyboardIdentifier="PalettColorPickerViewController" id="z77-jQ-eO7" customClass="PalettColorPickerViewController" customModule="PaletteViewController" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7aJ-kx-FAA">
+                        <rect key="frame" x="0.0" y="0.0" width="280" height="360"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lcc-PX-wAT">
+                                <rect key="frame" x="10" y="58" width="268" height="40"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jJ0-bK-mE6">
+                                        <rect key="frame" x="228" y="0.0" width="40" height="40"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="slider.horizontal.3" catalog="system"/>
+                                        <connections>
+                                            <action selector="detailButtonClicked:" destination="z77-jQ-eO7" eventType="touchUpInside" id="b0S-Po-1ch"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aYw-am-G1p" customClass="PenSizeButton" customModule="PaletteViewController" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="PenSize1"/>
+                                        <connections>
+                                            <action selector="penSizeAction:" destination="z77-jQ-eO7" eventType="touchUpInside" id="Zxf-Fg-PBx"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fdn-fR-vif" customClass="PenSizeButton" customModule="PaletteViewController" customModuleProvider="target">
+                                        <rect key="frame" x="181" y="0.0" width="40" height="40"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="PenSize5"/>
+                                        <connections>
+                                            <action selector="penSizeAction:" destination="z77-jQ-eO7" eventType="touchUpInside" id="x4n-6y-qvs"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="loN-Im-YZY" customClass="PenSizeButton" customModule="PaletteViewController" customModuleProvider="target">
+                                        <rect key="frame" x="45" y="0.0" width="40" height="40"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="PenSize2"/>
+                                        <connections>
+                                            <action selector="penSizeAction:" destination="z77-jQ-eO7" eventType="touchUpInside" id="bjH-dm-qDU"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zvu-oP-OsX" customClass="PenSizeButton" customModule="PaletteViewController" customModuleProvider="target">
+                                        <rect key="frame" x="137" y="0.0" width="40" height="40"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="PenSize4"/>
+                                        <connections>
+                                            <action selector="penSizeAction:" destination="z77-jQ-eO7" eventType="touchUpInside" id="50e-la-G2P"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qoo-86-ygD" customClass="PenSizeButton" customModule="PaletteViewController" customModuleProvider="target">
+                                        <rect key="frame" x="91" y="0.0" width="40" height="40"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="PenSize3"/>
+                                        <connections>
+                                            <action selector="penSizeAction:" destination="z77-jQ-eO7" eventType="touchUpInside" id="liz-of-iyf"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="268" id="0dt-uQ-7qT"/>
+                                    <constraint firstAttribute="height" constant="40" id="Rj4-UC-VWU"/>
+                                </constraints>
+                            </view>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E7x-au-ZBh">
+                                <rect key="frame" x="24.5" y="127" width="231" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="231" id="LkB-DT-mHq"/>
+                                    <constraint firstAttribute="height" constant="120" id="NMA-zc-Gwh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" systemColor="secondaryLabelColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="kOp-Qj-Vzw"/>
+                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="lcc-PX-wAT" firstAttribute="top" secondItem="kOp-Qj-Vzw" secondAttribute="top" constant="10" id="38I-ac-zar"/>
+                            <constraint firstItem="E7x-au-ZBh" firstAttribute="centerX" secondItem="kOp-Qj-Vzw" secondAttribute="centerX" id="F1S-V0-u10"/>
+                            <constraint firstItem="lcc-PX-wAT" firstAttribute="leading" secondItem="kOp-Qj-Vzw" secondAttribute="leading" constant="10" id="I5N-dS-CnT"/>
+                            <constraint firstItem="E7x-au-ZBh" firstAttribute="centerY" secondItem="kOp-Qj-Vzw" secondAttribute="centerY" id="V98-y0-CuV"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="DuG-ga-CQn"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="280" height="360"/>
+                    <connections>
+                        <outlet property="advancedButton" destination="jJ0-bK-mE6" id="kJ8-GO-ED3"/>
+                        <outlet property="messageLabel" destination="E7x-au-ZBh" id="z9T-S7-MdL"/>
+                        <outlet property="penSize1" destination="aYw-am-G1p" id="mIp-DW-0gH"/>
+                        <outlet property="penSize2" destination="loN-Im-YZY" id="Od7-yj-vc1"/>
+                        <outlet property="penSize3" destination="qoo-86-ygD" id="jai-i1-hUG"/>
+                        <outlet property="penSize4" destination="zvu-oP-OsX" id="0Wp-p0-6yj"/>
+                        <outlet property="penSize5" destination="Fdn-fR-vif" id="o3E-9e-UpM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OS2-GC-loE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="260.86956521739131" y="201.5625"/>
+        </scene>
+        <!--Palett Eraser View Controller-->
+        <scene sceneID="htC-sf-hf3">
+            <objects>
+                <viewController storyboardIdentifier="PalettEraserViewController" id="lvD-fp-B1J" customClass="PalettEraserViewController" customModule="PaletteViewController" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hQ6-SD-9OS">
+                        <rect key="frame" x="0.0" y="0.0" width="300" height="80"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="NV2-r7-hjR">
+                                <rect key="frame" x="16" y="31.5" width="268" height="32"/>
+                                <segments>
+                                    <segment title="Pixel Eraser"/>
+                                    <segment title="Object Eraser"/>
+                                </segments>
+                                <connections>
+                                    <action selector="changeEraserType:" destination="lvD-fp-B1J" eventType="valueChanged" id="W7F-ht-Rlx"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="uyN-kK-bM9"/>
+                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="NV2-r7-hjR" firstAttribute="leading" secondItem="uyN-kK-bM9" secondAttribute="leading" constant="16" id="oW1-EN-S22"/>
+                            <constraint firstItem="uyN-kK-bM9" firstAttribute="trailing" secondItem="NV2-r7-hjR" secondAttribute="trailing" constant="16" id="saC-E5-Aex"/>
+                            <constraint firstItem="NV2-r7-hjR" firstAttribute="centerY" secondItem="uyN-kK-bM9" secondAttribute="centerY" id="xXX-Bd-ohL"/>
+                        </constraints>
+                    </view>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="300" height="80"/>
+                    <connections>
+                        <outlet property="segmentControl" destination="NV2-r7-hjR" id="g5U-WM-Wa4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="v3a-lm-oke" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="261" y="377"/>
+        </scene>
+        <!--Palette Add New Pen View Controller-->
+        <scene sceneID="s6b-kP-vll">
+            <objects>
+                <viewController storyboardIdentifier="PaletteAddNewPenViewController" id="e6V-uW-8AC" customClass="PaletteAddNewPenViewController" customModule="PaletteViewController" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yZ0-ah-viT">
+                        <rect key="frame" x="0.0" y="0.0" width="150" height="160"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="79T-K8-Sgi">
+                                <rect key="frame" x="0.0" y="55" width="150" height="128"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kez-o0-1si">
+                                        <rect key="frame" x="0.0" y="18" width="68" height="63"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <connections>
+                                            <action selector="addBrush:" destination="e6V-uW-8AC" eventType="touchUpInside" id="Xc3-TZ-ddb"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="top" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="utf-tK-jne">
+                                        <rect key="frame" x="71" y="18" width="68" height="63"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <connections>
+                                            <action selector="addPen:" destination="e6V-uW-8AC" eventType="touchUpInside" id="4Cd-Bm-6ks"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="top" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="8f1-GJ-uob" userLabel="Pencil Button">
+                                        <rect key="frame" x="142" y="22" width="68" height="63"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <connections>
+                                            <action selector="addPencil:" destination="e6V-uW-8AC" eventType="touchUpInside" id="yIz-Eu-Dkf"/>
+                                        </connections>
+                                    </button>
+                                    <imageView opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oLq-6u-ZeI">
+                                        <rect key="frame" x="0.0" y="11" width="69" height="107"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="T1w-nr-NOy">
+                                        <rect key="frame" x="71" y="11" width="69" height="107"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="Lf0-Pa-OAb">
+                                        <rect key="frame" x="142" y="11" width="69" height="107"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="Ds5-7S-hWS"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="SZk-hS-9bG"/>
+                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="SZk-hS-9bG" firstAttribute="trailing" secondItem="79T-K8-Sgi" secondAttribute="trailing" id="1Gk-Zd-n9I"/>
+                            <constraint firstItem="SZk-hS-9bG" firstAttribute="top" secondItem="79T-K8-Sgi" secondAttribute="top" constant="-7" id="ffu-rw-0dP"/>
+                            <constraint firstItem="79T-K8-Sgi" firstAttribute="leading" secondItem="SZk-hS-9bG" secondAttribute="leading" id="hyz-Jq-Kfi"/>
+                            <constraint firstItem="79T-K8-Sgi" firstAttribute="centerX" secondItem="SZk-hS-9bG" secondAttribute="centerX" id="vq0-6F-3qU"/>
+                        </constraints>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="150" height="160"/>
+                    <connections>
+                        <outlet property="alphaPenImageView" destination="T1w-nr-NOy" id="8bs-HG-DZc"/>
+                        <outlet property="brushButton" destination="Kez-o0-1si" id="Mqr-gS-jXz"/>
+                        <outlet property="brushPenImageView" destination="oLq-6u-ZeI" id="dC9-8Z-b3P"/>
+                        <outlet property="penButton" destination="utf-tK-jne" id="ChT-uI-aJZ"/>
+                        <outlet property="pencilImageView" destination="Lf0-Pa-OAb" id="Lt2-YG-IAr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hc5-iJ-B6W" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="663.768115942029" y="393.75"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Ung-6x-Qg1">
+            <objects>
+                <navigationController storyboardIdentifier="PalettColorPickeNavigationController" navigationBarHidden="YES" id="zqf-Jo-j3Z" sceneMemberID="viewController">
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="280" height="360"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="dad-dR-zcJ">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="z77-jQ-eO7" kind="relationship" relationship="rootViewController" id="m0g-sv-25C"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RYe-jV-GqH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-358" y="201"/>
+        </scene>
+        <!--Palette View Controller-->
+        <scene sceneID="lJS-BB-ZeA">
+            <objects>
+                <viewController storyboardIdentifier="PaletteViewControllerVertical" id="WFH-4L-5Rf" customClass="PaletteViewController" customModule="PaletteViewController" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JJt-gC-jcj">
+                        <rect key="frame" x="0.0" y="0.0" width="80" height="280"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <subviews>
+                            <view opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ChB-vZ-0lu" customClass="PaletteBackgroundView" customModule="PaletteViewController" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="79" height="280"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RrT-aJ-3BB" userLabel="Utility Button">
+                                <rect key="frame" x="20" y="230" width="39" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <state key="normal" image="PaletteMore"/>
+                                <state key="disabled" image="RedoDisabled"/>
+                                <connections>
+                                    <action selector="utilityAction:" destination="yB2-Kv-RjB" eventType="touchUpInside" id="DC0-O4-8pi"/>
+                                    <action selector="utilityAction:" destination="WFH-4L-5Rf" eventType="touchUpInside" id="h5R-XI-Vnv"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kA9-pX-pF7" userLabel="ClipView">
+                                <rect key="frame" x="-16" y="60" width="111" height="162"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hIs-Qx-Tg8" customClass="PaletteTabView" customModule="PaletteViewController" customModuleProvider="target">
+                                        <rect key="frame" x="16" y="0.0" width="77" height="162"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="onQ-tq-BoG">
+                                <rect key="frame" x="1" y="12" width="40" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="Undo"/>
+                                <state key="disabled" image="UndoDisabled"/>
+                                <connections>
+                                    <action selector="undoAction:" destination="WFH-4L-5Rf" eventType="touchUpInside" id="CyB-0G-XIF"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f69-go-CBN">
+                                <rect key="frame" x="39" y="12" width="40" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="Redo"/>
+                                <state key="disabled" image="RedoDisabled"/>
+                                <connections>
+                                    <action selector="redoAction:" destination="WFH-4L-5Rf" eventType="touchUpInside" id="zKI-Wd-j1j"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="mUF-O1-NqK"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="80" height="280"/>
+                    <connections>
+                        <outlet property="backgroundView" destination="ChB-vZ-0lu" id="43q-O8-NXc"/>
+                        <outlet property="clipView" destination="kA9-pX-pF7" id="o9g-zq-FRW"/>
+                        <outlet property="paletteTabView" destination="hIs-Qx-Tg8" id="gNB-9W-kBJ"/>
+                        <outlet property="redoButton" destination="f69-go-CBN" id="nxm-cK-bIR"/>
+                        <outlet property="undoButton" destination="onQ-tq-BoG" id="Ssl-Se-Rd4"/>
+                        <outlet property="utilityButton" destination="RrT-aJ-3BB" id="H8L-qv-H19"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pLB-YT-z6F" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="202.89855072463769" y="-318.08035714285711"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="PaletteMore" width="30" height="30"/>
+        <image name="PenSize1" width="40" height="40"/>
+        <image name="PenSize2" width="40" height="40"/>
+        <image name="PenSize3" width="40" height="40"/>
+        <image name="PenSize4" width="40" height="40"/>
+        <image name="PenSize5" width="40" height="40"/>
+        <image name="Redo" width="31" height="30"/>
+        <image name="RedoDisabled" width="31" height="30"/>
+        <image name="Undo" width="31" height="30"/>
+        <image name="UndoDisabled" width="31" height="30"/>
+        <image name="slider.horizontal.3" catalog="system" width="128" height="99"/>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="secondarySystemBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
