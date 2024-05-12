@@ -13,6 +13,8 @@
 		440ACA0722FBD1CA003562BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 440ACA0622FBD1CA003562BA /* Assets.xcassets */; };
 		440ACA0A22FBD1CA003562BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 440ACA0822FBD1CA003562BA /* LaunchScreen.storyboard */; };
 		4444336129BB1079002D34B4 /* PencilKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4444335E29BB1079002D34B4 /* PencilKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		445CEE522BEF1489008A73B4 /* ColorPicker.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 445CEE382BEF119E008A73B4 /* ColorPicker.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		445CEE812BEF293A008A73B4 /* ColorPicker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 445CEE382BEF119E008A73B4 /* ColorPicker.framework */; };
 		446D3CA62A89F80F005C8987 /* PalletteTabVerticalTextLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446D3CA52A89F80F005C8987 /* PalletteTabVerticalTextLabel.swift */; };
 		446D3CF32A8A335A005C8987 /* LXReorderableCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 44259B9922FEDBC300007F1F /* LXReorderableCollectionViewFlowLayout.m */; };
 		446D3CF42A8A335D005C8987 /* LXReorderableCollectionViewFlowLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 44259B9A22FEDBC400007F1F /* LXReorderableCollectionViewFlowLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -28,6 +30,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		445CEE372BEF119E008A73B4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 445CEE332BEF119E008A73B4 /* ColorPicker.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 44D187FE23BF65390030680A;
+			remoteInfo = ColorPicker;
+		};
+		445CEE392BEF11CE008A73B4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 445CEE332BEF119E008A73B4 /* ColorPicker.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 44D187FD23BF65390030680A;
+			remoteInfo = ColorPicker;
+		};
 		449CE090230556AC0039F81C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 440AC9F422FBD1CA003562BA /* Project object */;
@@ -38,12 +54,23 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		445CEE832BEF293A008A73B4 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		449CE097230556AC0039F81C /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				445CEE522BEF1489008A73B4 /* ColorPicker.framework in Embed Frameworks */,
 				449CE093230556AC0039F81C /* PaletteViewController.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -68,6 +95,7 @@
 		44259B9A22FEDBC400007F1F /* LXReorderableCollectionViewFlowLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXReorderableCollectionViewFlowLayout.h; sourceTree = "<group>"; };
 		44259B9C22FEDBE400007F1F /* PaletteTabView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaletteTabView.swift; sourceTree = "<group>"; };
 		4444335E29BB1079002D34B4 /* PencilKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PencilKit.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.0.sdk/System/iOSSupport/System/Library/PrivateFrameworks/PencilKit.framework; sourceTree = DEVELOPER_DIR; };
+		445CEE332BEF119E008A73B4 /* ColorPicker.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ColorPicker.xcodeproj; path = ../MetalProject/ColorPicker/ColorPicker.xcodeproj; sourceTree = "<group>"; };
 		446D3CA52A89F80F005C8987 /* PalletteTabVerticalTextLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PalletteTabVerticalTextLabel.swift; sourceTree = "<group>"; };
 		446D3CC12A8A02CC005C8987 /* LXReorderableCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LXReorderableCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
 		44778A492AFB747000EFD51D /* Palette View Controller.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Palette View Controller.entitlements"; sourceTree = "<group>"; };
@@ -94,6 +122,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				445CEE812BEF293A008A73B4 /* ColorPicker.framework in Frameworks */,
 				4444336129BB1079002D34B4 /* PencilKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -104,6 +133,7 @@
 		440AC9F322FBD1CA003562BA = {
 			isa = PBXGroup;
 			children = (
+				445CEE332BEF119E008A73B4 /* ColorPicker.xcodeproj */,
 				44778A492AFB747000EFD51D /* Palette View Controller.entitlements */,
 				440AC9FE22FBD1CA003562BA /* DemoApp */,
 				449CE08C230556AC0039F81C /* PaletteViewController */,
@@ -132,6 +162,14 @@
 				440ACA0622FBD1CA003562BA /* Assets.xcassets */,
 			);
 			path = DemoApp;
+			sourceTree = "<group>";
+		};
+		445CEE342BEF119E008A73B4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				445CEE382BEF119E008A73B4 /* ColorPicker.framework */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		4497295723055F0000F02764 /* Frameworks */ = {
@@ -193,6 +231,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				445CEE3A2BEF11CE008A73B4 /* PBXTargetDependency */,
 				449CE091230556AC0039F81C /* PBXTargetDependency */,
 			);
 			name = "Palette View Controller";
@@ -208,6 +247,7 @@
 				449CE087230556AC0039F81C /* Sources */,
 				449CE088230556AC0039F81C /* Frameworks */,
 				449CE089230556AC0039F81C /* Resources */,
+				445CEE832BEF293A008A73B4 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -248,6 +288,12 @@
 			mainGroup = 440AC9F322FBD1CA003562BA;
 			productRefGroup = 440AC9FD22FBD1CA003562BA /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 445CEE342BEF119E008A73B4 /* Products */;
+					ProjectRef = 445CEE332BEF119E008A73B4 /* ColorPicker.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				440AC9FB22FBD1CA003562BA /* Palette View Controller */,
@@ -255,6 +301,16 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		445CEE382BEF119E008A73B4 /* ColorPicker.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = ColorPicker.framework;
+			remoteRef = 445CEE372BEF119E008A73B4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		440AC9FA22FBD1CA003562BA /* Resources */ = {
@@ -304,6 +360,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		445CEE3A2BEF11CE008A73B4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ColorPicker;
+			targetProxy = 445CEE392BEF11CE008A73B4 /* PBXContainerItemProxy */;
+		};
 		449CE091230556AC0039F81C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 449CE08A230556AC0039F81C /* PaletteViewController */;
@@ -456,7 +517,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KCBZG7FH6T;
 				INFOPLIST_FILE = DemoApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -481,7 +542,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KCBZG7FH6T;
 				INFOPLIST_FILE = DemoApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -516,7 +577,7 @@
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = PaletteViewController/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -555,7 +616,7 @@
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = PaletteViewController/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

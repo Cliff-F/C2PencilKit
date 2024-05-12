@@ -8,6 +8,9 @@
 
 import UIKit
 import simd
+#if canImport(ColorPicker)
+import ColorPicker
+#endif
 
 func WLoc( _ title: String) -> String {
   return NSLocalizedString(title, tableName: nil, bundle: Bundle(identifier: "com.catalystwo.MetalProject.PaletteViewController")!, value: "", comment: "")
@@ -1026,6 +1029,15 @@ extension PalettColorPickerViewController: UIColorPickerViewControllerDelegate {
   }
 }
 
+#if canImport(ColorPicker)
+@available(iOS 13.4,*)
+extension PalettColorPickerViewController: ColorPickerDelegate {
+  func setColor(_ colorPicker: ColorPickerViewController, color: SIMD4<Float>?) {
+    delegate?.setColor(color!)
+  }
+}
+#endif
+
 @available(iOS 13.4,*)
 class PalettColorPickerViewController: UIViewController {
 //  @IBOutlet weak var imageView: UIImageView!
@@ -1042,8 +1054,12 @@ class PalettColorPickerViewController: UIViewController {
   
   @IBOutlet weak var advancedButton: UIButton!
   
+#if canImport(ColorPicker)
+  var colorPicker: ColorPickerViewController!
+#else
   var colorPicker: UIColorPickerViewController!
-  
+#endif
+
   weak var delegate: PaletteCustomising?
   weak var viewModel: PaletteViewModel?
   
@@ -1088,11 +1104,11 @@ class PalettColorPickerViewController: UIViewController {
   
   override var preferredContentSize: CGSize {
     get {
-#if targetEnvironment(macCatalyst)
-      return CGSize(width: 280, height: 260) // 320 for iphone
+#if canImport(ColorPicker)
+      return CGSize(width: 280, height: 450)
       
 #else
-      return CGSize(width: 370, height: 670) // 320 for iphone
+      return CGSize(width: 280, height: 260)
 #endif
     }
     set {
@@ -1102,12 +1118,24 @@ class PalettColorPickerViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
+#if canImport(ColorPicker)
+    let controller = ColorPickerViewController.viewController(color: preset.color)
+    colorPicker = controller
+    colorPicker.delegate = self
+    colorPicker.convertDarkColor = convertDarkColor
+    controller.darkMode = darkMode
+    
+#else
     let controller = UIColorPickerViewController()//ColorPickerViewController.viewController(color: preset.color)
     colorPicker = controller
     let color = UIColor(red: CGFloat(preset.color[0]), green: CGFloat(preset.color[1]), blue: CGFloat(preset.color[2]), alpha: CGFloat(preset.color[3]))
     colorPicker.selectedColor = color
     colorPicker.supportsAlpha = true
     colorPicker.delegate = self
+
+#endif
+    
+
 //    colorPicker.convertDarkColor = convertDarkColor
 //    controller.darkMode = darkMode
     controller.view.frame = CGRect(x: 0, y: 50, width: view.bounds.size.width, height: view.bounds.size.height - 50)
